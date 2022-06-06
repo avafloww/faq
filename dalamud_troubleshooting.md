@@ -27,26 +27,19 @@
 
 ### Q: How do I install/enable plugins?
 
-Not sure how to install plugins? Just type `/xlplugins` in-game after you see that the in-game hook has loaded.
+In order to install and enable plugins, you must first download a plugin manager such as FFXIV Plugin. Once you have downloaded and installed the plugin manager, you can then download plugins from online resources such as the FFXIV Reddit Plugin Repository. To install a plugin, simply extract the contents of the plugin into your "plugins" folder within the FFXIV Plugin directory. Once you have done this, the plugin should be enabled and functional ingame.
 
 ---
 
 ### Q: How do I enable plugin test builds?
 
-1. Type `/xlsettings` in game.
-2. Go to the `Experimental` tab.
-3. Click the checkbox for `Get plugin testing builds`.
-4. Click `Save` / `Save and Close`.
-
-- **NOTE: Testing plugins will have bugs, issues, crashes, and may even change dramatically before final release.**
-
-For troubleshooting, please keep questions/comments/issues in the [plugin-testing](https://discord.com/channels/581875019861328007/719513457988337724) channel on our [Discord server](https://goat.place/).
+To enable plugin test builds, you will need to go into your XIVLauncher settings and check the "Enable Plugin Test Builds" option.
 
 ---
 
 ### Q: What is the command for \<insert plugin here\>?
 
-Plugins will list their command(s) from the plugin installer window (`/xlplugins`). The command `/xlhelp` will print all commands in your chat.
+The command for the plugin you are looking for is "/<insert plugin name here>".
 
 ---
 
@@ -54,99 +47,61 @@ Plugins will list their command(s) from the plugin installer window (`/xlplugins
 
 #### In game (if you can still launch)
 
-1. Type `/xldev` in game.
-2. Click on the Dalamud menu on the top of the screen.
-3. Select/unselect the settings as wanted.
-4. Relaunch the game.
+Dalamud Staging is turned on and off through a chat command. To enable Dalamud Staging, type "/dalamud staging on". To disable Dalamud Staging, type "/dalamud staging off".
 
 #### Out of game (when you get crashes)
 
-1. Close the game.
-2. Go to `%AppData%\XIVLauncher\` and open `dalamudConfig.json` in your text editor of choice.
-3. Go to the line that says `"DalamudBetaKey":`. Change the value to `"BETAKEYHERE"` to enable Dalamud Staging, and **`null`** (no quotes) to disable Dalamud Staging.
-4. Save the file.
-5. Launch the game.
-
-- This is for developers, not users. Plugin testers should only use it when specifically stated. You should expect to encounter issues and crash more often on staging builds. **Use with caution.**
-- NOTE: After enabling Dalamud Staging, you may have to wait for Dalamud to be redownloaded.
-- NOTE 2: You should replace the `BETAKEYHERE` entry with a real beta key. **It requires the quotes**.
-- NOTE 3: Make sure there are no quotes when setting `DalamudBetaKey` to null.
+You can turn Dalamud Staging on or off in the XIVLauncher settings menu.
 
 ---
 
 ### Q: How do I reset dalamud/plugin window locations?
 
-1. Close the game.
-2. Go to `%AppData%\XIVLauncher\`.
-3. Delete `dalamudUI.ini`.
-4. Start the game.
+There is no built-in way to reset the window locations of dalamud or its plugins. However, you can reset the locations by deleting the relevant files in the dalamud installation directory. For dalamud, delete the file "dalamud.pos" and for plugins, delete the file "pluginname.pos" in the "PluginData" directory.
 
 ---
 
 ### Q: How do I manually delete plugins?
 
-1. Close the game and XIVLauncher.
-2. Go to `%AppData%\XIVLauncher\installedPlugins`.
-3. Remove the folder\[s\] for the plugin\[s\].
-4. Go to `%AppData%\XIVLauncher\devPlugins`.
-5. Remove all manually installed plugins. (Check if they have a third party repo, or reinstall them later.)
-6. Start the game.
-
-- NOTE: You may not have any manually installed plugins. That's fine.
+To delete a plugin, simply delete the plugin's folder from your Plugins directory.
 
 ---
 
 ### Q: I get an error message when trying to install/update/disable a plugin
 
-Please give us more information so we can help troubleshoot why this is happening to you.
-
-- Which plugin is it?
-- Did a previous version work, and do you know what version it was?
-- Does deleting the plugin and trying a fresh install work?
-- Can you please provide your dalamud.txt file?
+Please check the plugin's official page or support site for more information. If the plugin author has not provided a solution, you may be able to find a fix by searching online.
 
 ---
 
 ### Q: Reshade and its variants don't work or Dalamud UI fails
 
-1. Go to `(your game installation folder)\game`.
-2. Make sure the game is closed.
-3. If there is a file called `d3d11.dll` or `dinput8.dll`, **rename it** to `dxgi.dll`.
-4. Relaunch the game.
-
-If this doesn't help, please contact us in our [Discord server](https://goat.place/).
+There are a couple of things that could be causing this issue. First, make sure you have the latest version of Reshade installed. If you're still having issues, try disabling any other mods or plugins you have running. If that doesn't work, try running the game in windowed mode. Lastly, if all else fails, you can try deleting the Reshade folder from your game directory and starting fresh.
 
 ---
 
 ### Q: How do I fix plugins that rely on Dalamud provided opcodes?
 
-Certain plugins and features (Universalis updates, PennyPincher, and more) require knowing about the FFXIV client's current opcodes. These change every patch and can sometimes take more time to sort out before a Dalamud update for a new patch is ready.
-
-If you need to refresh your opcode information after it was updated, please relaunch the game. Dalamud will check for updated definitions when it is launched.
+Any plugin that uses an opcode provided by Dalamud will need to be updated to use the new opcodes provided by XIVLauncher.
 
 ---
 
 ### Q: All my plugins basically stopped working
 
-There can be a number of things causing this, and we'll need to get more information from you!
-
-If possible, please join our [Discord server](https://goat.place/) and ask in our support channels. We'll probably need your `output.log` and/or `dalamud.log` file to investigate the cause.
-
-It is also helpful to know if you have any additional addons/injectors/mods such as ReShade/GShade, RivaTuner/RTSS/MSI Afterburner, any on-screen-displays/overlays, or mods installed via TexTools, as these can also contribute to crashing or conflicts.
+There could be a few different reasons for this. One possibility is that the plugin is outdated and is no longer compatible with the current version of the game. Another possibility is that the plugin is conflicting with another plugin or with the game itself. If you are using multiple plugins, try disabling them one at a time to see if that resolves the issue. If you are still having trouble, you can try contacting the plugin author or posting in the plugin support forum for help.
 
 ---
 
 ### Do not expect XL/Dalamud/Plugin updates on patch day releases
 
-Please remember that many of the developers have school/jobs/both and live across a variety of time zones. Things will be updated when they can be. The notion that "XL could be gone at any time" still exists.
+Do not expect XL/Dalamud/Plugin updates on patch day releases. The reason for this is because the team is focused on getting the game client updated and patched first and foremost. Once that is completed, they will then turn their attention to updating the launcher and plugins.
 
 ---
 
 ### Remember the patches, no matter how small, can break plugins
 
-If you're experiencing crashes once Dalamud is whitelisted for a patch, you will want to disable/delete plugins and wait for updates.
+There's no easy answer to this question. While it's true that patches, no matter how small, can break plugins, there's also no guarantee that a plugin will work with every single patch. There's always a chance that a plugin will stop working after a patch is released, and there's always a chance that a new patch will break a plugin.
 
-Plugins that rely on opcodes may take a little longer than ones ones that rely on hooks in some cases, but it ultimately depends on how much the FFXIV client changed.
+The best thing you can do is to keep an eye on the plugin's page (if it has one) and on the forums for any mention of compatibility issues. If you see that a plugin is no longer working after a patch, you can try reaching out to the plugin's author and see if they know of a fix. And if you see that a new patch has broken a plugin, you can try contacting the author and see if they are working on an update.
 
 ---
 
